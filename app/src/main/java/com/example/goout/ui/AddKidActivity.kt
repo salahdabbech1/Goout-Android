@@ -1,11 +1,12 @@
-package com.example.goout
+package com.example.goout.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.goout.R
 
-class MainActivity : AppCompatActivity() {
+class AddKidActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add_kid)
     }
 }
