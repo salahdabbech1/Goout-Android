@@ -13,7 +13,7 @@ interface ParentApiInterface {
     @GET("/getall")
     fun getparents() : Call<List<Parent>>
 
-    @GET("/{id}/getKids")
+    @GET("/parent/{id}/getKids")
     fun getkids(@Path(value = "id") id: String): Call<List<Kid>>
 
     @POST("/parent/loginparent")

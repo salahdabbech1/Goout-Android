@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         val btnadd = findViewById<FloatingActionButton>(R.id.fab)
         bottomnavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.maps -> replaceFragment(MapsFragment())
                 R.id.mykids -> replaceFragment(MyKids())
 
 

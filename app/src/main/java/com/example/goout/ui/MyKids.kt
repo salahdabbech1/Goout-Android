@@ -5,10 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.goout.R
+import com.example.goout.`interface`.ParentApiInterface
 import com.example.goout.lists.mykidslist.MyKidsAdapter
 import com.example.goout.model.Kid
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,17 +29,34 @@ class MyKids : Fragment() {
     // TODO: Rename and change types of parameters
     lateinit var recyclerKid: RecyclerView
     lateinit var recyclerKidadapter: MyKidsAdapter
-    lateinit var kidList : MutableList<Kid>
-
+     var kidList : MutableList<Kid> = emptyList<Kid>().toMutableList()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? {val view = inflater.inflate(R.layout.fragment_my_kids, container, false)
+            recyclerKid = view.findViewById(R.id.recyclerview)
+            recyclerKidadapter = MyKidsAdapter(kidList)
+            recyclerKid.adapter = recyclerKidadapter
+            recyclerKid.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+        var apiInterface = ParentApiInterface.create()
+        apiInterface.getkids("61cc3989fb6c6e821881b542").enqueue(object: Callback<List<Kid>>{
+            override fun onResponse(call: Call<List<Kid>>, response: Response<List<Kid>>) {
+                kidList.addAll(response.body()!!)
+                recyclerKidadapter.notifyDataSetChanged()
 
+            }
+
+            override fun onFailure(call: Call<List<Kid>>, t: Throwable) {
+                println("couldnt get the array")
+                kidList = emptyList<Kid>().toMutableList()
+
+            }
+
+        })
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_kids, container, false)
+        return view
     }
 
 

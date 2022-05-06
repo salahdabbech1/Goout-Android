@@ -32,12 +32,12 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.PasswordEdit)
         val loginbtn = findViewById<Button>(R.id.LoginButton)
         val sharedprefs = getSharedPreferences("Login_prefs", MODE_PRIVATE)
-        if (sharedprefs != null) {
+        /*if (sharedprefs != null) {
             Log.d("Shared prefs","this is whats in the shared prefs"+sharedprefs.getString("_id","nothing in id"))
 
             val i = Intent(applicationContext,MainActivity::class.java)
             startActivity(i)
-        }
+        }*/
         loginbtn.setOnClickListener {
             val apiInterface = ParentApiInterface.create()
             var parent = Parent()
@@ -59,9 +59,9 @@ class LoginActivity : AppCompatActivity() {
                         val i = Intent(applicationContext, MainActivity::class.java)
                         startActivity(i)
                     }
-                    else if (response.code()==400){
+                    else {
                         val builder = AlertDialog.Builder(this@LoginActivity)
-                        builder.setTitle("login failed")
+                        builder.setTitle("User not found")
                             .setMessage("the user was not found, create an account instead?")
                             .setPositiveButton("register",
                                 DialogInterface.OnClickListener { dialog, id ->
@@ -76,10 +76,6 @@ class LoginActivity : AppCompatActivity() {
                         // Create the AlertDialog object and return it
                         builder.create().show()
                     }
-                    else{
-                        println("ay 7aja ")
-                    }
-
                     }
 
                 override fun onFailure(call: Call<Parent>, t: Throwable) {

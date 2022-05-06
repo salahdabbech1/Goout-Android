@@ -3,6 +3,7 @@ package com.example.goout.lists.mykidslist
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.goout.R
 import com.example.goout.model.Kid
@@ -18,7 +19,7 @@ class MyKidsAdapter(var mykidslist : MutableList<Kid>):RecyclerView.Adapter<MyKi
     override fun onBindViewHolder(holder: MyKidsViewHolder, position: Int) {
         val name = mykidslist[position].Name
         val email = mykidslist[position].Email
-
+        println(name+email)
         holder.Name.text = name
         holder.Email.text = email
 
