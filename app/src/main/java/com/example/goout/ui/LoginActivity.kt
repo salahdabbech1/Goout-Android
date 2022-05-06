@@ -32,23 +32,25 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.PasswordEdit)
         val loginbtn = findViewById<Button>(R.id.LoginButton)
         val sharedprefs = getSharedPreferences("Login_prefs", MODE_PRIVATE)
-        /*if (sharedprefs != null) {
-            /*Log.d("Shared prefs","this is whats in the shared prefs"+sharedprefs.getString("_id","nothing in id"))
-                */
+        if (sharedprefs != null) {
+            Log.d("Shared prefs","this is whats in the shared prefs"+sharedprefs.getString("_id","nothing in id"))
+
             val i = Intent(applicationContext,MainActivity::class.java)
             startActivity(i)
-        }*/
+        }
         loginbtn.setOnClickListener {
             val apiInterface = ParentApiInterface.create()
-            val parent = Parent()
+            var parent = Parent()
             parent.Email= email.text.toString()
             parent.Password = password.text.toString()
+            println(parent)
             apiInterface.login(parent).enqueue(object :
                 Callback<Parent> {
                 override fun onResponse(call: Call<Parent>, response:
-            Response<Parent>) {val user = response.body()
+            Response<Parent>) {
+                    println("reponse body"+ response.body().toString())
+
                     if (response.code()==201){
-                        Log.d("reponse body","this is the response body"+response.body())
                         sharedprefs.edit().apply {
                             putString("_id", response.body()!!._id)
                             putString("Email", response.body()!!.Email)
@@ -57,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
                         val i = Intent(applicationContext, MainActivity::class.java)
                         startActivity(i)
                     }
-                    else{ (response.code()==400)
+                    else if (response.code()==400){
                         val builder = AlertDialog.Builder(this@LoginActivity)
                         builder.setTitle("login failed")
                             .setMessage("the user was not found, create an account instead?")
@@ -74,11 +76,15 @@ class LoginActivity : AppCompatActivity() {
                         // Create the AlertDialog object and return it
                         builder.create().show()
                     }
+                    else{
+                        println("ay 7aja ")
+                    }
 
                     }
 
                 override fun onFailure(call: Call<Parent>, t: Throwable) {
                     val builder = AlertDialog.Builder(this@LoginActivity)
+                    Log.i("erreur",t.toString())
                     builder.setTitle("login failed")
                         .setMessage("An error has occured, try connecting to the internet")
                         .setNegativeButton("ok",
