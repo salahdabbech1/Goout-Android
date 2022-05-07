@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         var bottomnavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomnavigation.background = null
         bottomnavigation.menu.getItem(2).isEnabled = false

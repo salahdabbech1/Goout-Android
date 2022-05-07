@@ -19,7 +19,7 @@ interface ParentApiInterface {
     @POST("/parent/loginparent")
     fun login(@Body parent : Parent): Call<Parent>
 
-    @POST("/RegisterParent")
+    @POST("/parent/RegisterParent")
     fun register(@Body() parent : Parent):Call<Parent>
 
 

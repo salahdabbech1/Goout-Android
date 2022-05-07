@@ -84,7 +84,7 @@
                     android:id="@+id/PasswordEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,9 +102,10 @@
                 android:id="@+id/toggleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                tools:layout_editor_absoluteX="55dp"
-                tools:layout_editor_absoluteY="224dp" />
+                android:layout_marginStart="37dp"
+                android:text="Kid"
+                app:layout_constraintBaseline_toBaselineOf="@+id/LoginButton"
+                app:layout_constraintStart_toStartOf="@+id/TextPassword" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

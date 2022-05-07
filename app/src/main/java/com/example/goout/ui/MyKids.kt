@@ -1,5 +1,6 @@
 package com.example.goout.ui
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,8 +30,7 @@ class MyKids : Fragment() {
     // TODO: Rename and change types of parameters
     lateinit var recyclerKid: RecyclerView
     lateinit var recyclerKidadapter: MyKidsAdapter
-     var kidList : MutableList<Kid> = emptyList<Kid>().toMutableList()
-
+    var kidList : MutableList<Kid> = emptyList<Kid>().toMutableList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +41,8 @@ class MyKids : Fragment() {
             recyclerKid.adapter = recyclerKidadapter
             recyclerKid.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         var apiInterface = ParentApiInterface.create()
-        apiInterface.getkids("61cc3989fb6c6e821881b542").enqueue(object: Callback<List<Kid>>{
+        var sharedPreferences = activity?.getSharedPreferences("Login_prefs",Context.MODE_PRIVATE)
+        apiInterface.getkids(sharedPreferences?.getString("_id","nothing in id")!!).enqueue(object: Callback<List<Kid>>{
             override fun onResponse(call: Call<List<Kid>>, response: Response<List<Kid>>) {
                 kidList.addAll(response.body()!!)
                 recyclerKidadapter.notifyDataSetChanged()

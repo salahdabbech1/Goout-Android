@@ -19,7 +19,7 @@ class MyKidsAdapter(var mykidslist : MutableList<Kid>):RecyclerView.Adapter<MyKi
     override fun onBindViewHolder(holder: MyKidsViewHolder, position: Int) {
         val name = mykidslist[position].Name
         val email = mykidslist[position].Email
-        println(name+email)
+
         holder.Name.text = name
         holder.Email.text = email
 
