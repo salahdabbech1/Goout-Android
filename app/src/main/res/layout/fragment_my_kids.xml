@@ -10,7 +10,8 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/mykids_single_item" />
+        tools:listitem="@layout/mykids_single_item"
+        android:orientation="horizontal"/>
 
 
 </FrameLayout>

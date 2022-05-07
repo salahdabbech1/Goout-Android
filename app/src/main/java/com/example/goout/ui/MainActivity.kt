@@ -2,9 +2,13 @@ package com.example.goout.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.goout.R
 import com.example.goout.databinding.ActivityMainBinding
@@ -25,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         bottomnavigation.background = null
         bottomnavigation.menu.getItem(2).isEnabled = false
         val btnadd = findViewById<FloatingActionButton>(R.id.fab)
+        val animation = AnimationUtils.loadAnimation(this,R.anim.circulare_explosion).apply {
+            duration = 200
+            interpolator = AccelerateDecelerateInterpolator()
+        }
         bottomnavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.mykids -> replaceFragment(MyKids())
@@ -34,9 +42,15 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        btnadd.setOnClickListener {
-            startActivity(Intent(applicationContext,AddKidActivity::class.java))
+        binding.fab.setOnClickListener {
+            binding.fab.isVisible = false
+            binding.circle.isVisible = true
+            binding.circle.startAnimation(animation){
+                startActivity(Intent(applicationContext, AddKidActivity::class.java))
+                binding.fab.isExpanded = true
+            }
         }
+
 
     }
     private fun replaceFragment(fragment: Fragment){

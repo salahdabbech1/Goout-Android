@@ -22,7 +22,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        val contextView = findViewById<View>(R.id.registerview)
+
         val name = findViewById<EditText>(R.id.nametext)
         val email = findViewById<EditText>(R.id.emailtext)
         val password = findViewById<EditText>(R.id.passwordtext)

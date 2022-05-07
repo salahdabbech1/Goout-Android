@@ -22,6 +22,9 @@ interface ParentApiInterface {
     @POST("/parent/RegisterParent")
     fun register(@Body() parent : Parent):Call<Parent>
 
+    @POST("/parent/{id}/Registerkids")
+            fun registerkid(@Path(value = "id") id:String,@Body kid: Kid) : Call<Kid>
+
 
 
     companion object {
