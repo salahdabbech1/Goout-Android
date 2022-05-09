@@ -1,13 +1,10 @@
 package com.example.goout.ui
 
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnimationUtils
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -20,26 +17,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    override fun onBackPressed() {
-        var sharedprefs : SharedPreferences = getSharedPreferences("Login_prefs", MODE_PRIVATE)
-        val builder = AlertDialog.Builder(this@MainActivity)
-        builder.setTitle("Logging out")
-            .setMessage("Are you sure you want to logout")
-            .setPositiveButton("yes",
-                DialogInterface.OnClickListener { dialog, id ->
-                    sharedprefs.edit().clear().apply()
-                    println(sharedprefs.getString("_id","no id"))
-                    this.finishAffinity()
-                })
-            .setNegativeButton("no",
-                DialogInterface.OnClickListener { dialog, id ->
-                    dialog.cancel()
-                })
-
-        // Create the AlertDialog object and return it
-        builder.create().show()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
