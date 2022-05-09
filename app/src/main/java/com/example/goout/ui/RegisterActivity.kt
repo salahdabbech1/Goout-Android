@@ -37,14 +37,14 @@ class RegisterActivity : AppCompatActivity() {
             apiInterface.register(parent).enqueue(object : Callback<Parent>{
                 override fun onResponse(call: Call<Parent>, response: Response<Parent>) {
                     if (response.isSuccessful){
-                        Toast.makeText(applicationContext,"Your account was created welcome",Toast.LENGTH_SHORT)
+                        Toast.makeText(applicationContext,"Your account was created welcome",Toast.LENGTH_SHORT).show()
                         sharedprefs.edit().apply {
                             putString("_id", response.body()!!._id)}.apply()
                         val i = Intent(applicationContext, MainActivity::class.java)
                         startActivity(i)
                     }
                     else{
-                        Toast.makeText(applicationContext,"An error occured, please retry",Toast.LENGTH_SHORT)
+                        Toast.makeText(applicationContext,"An error occured, please retry",Toast.LENGTH_SHORT).show()
 
                     }
                 }
