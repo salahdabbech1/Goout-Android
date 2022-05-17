@@ -9,9 +9,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/mykids_single_item"
-        android:orientation="horizontal"/>
+        android:layout_height="236dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/mykids_single_item" />
 
 
 </FrameLayout>

@@ -5,7 +5,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@color/third"
+    >
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -42,11 +44,12 @@
         app:layout_anchor="@+id/fab"
         app:layout_anchorGravity="center" />
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="com.example.goout.ui.MyKids"
         android:layout_width="match_parent"
-        android:layout_height="576dp"
+        android:layout_height="574dp"
         tools:layout_editor_absoluteX="258dp"
         tools:layout_editor_absoluteY="241dp" />
 

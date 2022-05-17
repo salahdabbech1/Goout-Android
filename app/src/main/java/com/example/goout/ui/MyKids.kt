@@ -30,32 +30,35 @@ class MyKids : Fragment() {
     // TODO: Rename and change types of parameters
     lateinit var recyclerKid: RecyclerView
     lateinit var recyclerKidadapter: MyKidsAdapter
-    var kidList : MutableList<Kid> = emptyList<Kid>().toMutableList()
+    var kidList: MutableList<Kid> = emptyList<Kid>().toMutableList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {val view = inflater.inflate(R.layout.fragment_my_kids, container, false)
-            recyclerKid = view.findViewById(R.id.recyclerview)
-            recyclerKidadapter = MyKidsAdapter(kidList)
-            recyclerKid.adapter = recyclerKidadapter
-            recyclerKid.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_my_kids, container, false)
+        recyclerKid = view.findViewById(R.id.recyclerview)
+        recyclerKidadapter = MyKidsAdapter(kidList)
+        recyclerKid.adapter = recyclerKidadapter
+        recyclerKid.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         var apiInterface = ParentApiInterface.create()
-        var sharedPreferences = activity?.getSharedPreferences("Login_prefs",Context.MODE_PRIVATE)
-        apiInterface.getkids(sharedPreferences?.getString("_id","nothing in id")!!).enqueue(object: Callback<List<Kid>>{
-            override fun onResponse(call: Call<List<Kid>>, response: Response<List<Kid>>) {
-                kidList.addAll(response.body()!!)
-                recyclerKidadapter.notifyDataSetChanged()
+        var sharedPreferences = activity?.getSharedPreferences("Login_prefs", Context.MODE_PRIVATE)
+        apiInterface.getkids(sharedPreferences?.getString("_id", "nothing in id")!!)
+            .enqueue(object : Callback<List<Kid>> {
+                override fun onResponse(call: Call<List<Kid>>, response: Response<List<Kid>>) {
+                    kidList.addAll(response.body()!!)
+                    recyclerKidadapter.notifyDataSetChanged()
 
-            }
+                }
 
-            override fun onFailure(call: Call<List<Kid>>, t: Throwable) {
-                println("couldnt get the array")
-                kidList = emptyList<Kid>().toMutableList()
+                override fun onFailure(call: Call<List<Kid>>, t: Throwable) {
+                    println("couldnt get the array")
+                    kidList = emptyList<Kid>().toMutableList()
 
-            }
+                }
 
-        })
+            })
         // Inflate the layout for this fragment
         return view
     }
