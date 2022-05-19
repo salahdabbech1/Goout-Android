@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.goout.R
 import com.example.goout.`interface`.ParentApiInterface
 import com.example.goout.lists.mykidslist.MyKidsAdapter
+import com.example.goout.lists.task.TaskAdapter
 import com.example.goout.model.Kid
+import com.example.goout.model.Task
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,16 +30,21 @@ private const val ARG_PARAM2 = "param2"
  */
 class MyKids : Fragment() {
     // TODO: Rename and change types of parameters
+    //Kids recycler view
     lateinit var recyclerKid: RecyclerView
     lateinit var recyclerKidadapter: MyKidsAdapter
     var kidList: MutableList<Kid> = emptyList<Kid>().toMutableList()
+    //task recycler view
+    lateinit var recyclerTask: RecyclerView
+    lateinit var recyclerTaskadapter: TaskAdapter
+    var tasList: MutableList<Task> = emptyList<Task>().toMutableList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_my_kids, container, false)
-        recyclerKid = view.findViewById(R.id.recyclerview)
+        recyclerKid = view.findViewById(R.id.recyclerviewkids)
         recyclerKidadapter = MyKidsAdapter(kidList)
         recyclerKid.adapter = recyclerKidadapter
         recyclerKid.layoutManager =

@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity() {
         bottomnavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.mykids -> replaceFragment(MyKids())
+                R.id.location -> replaceFragment(MapsFragment())
+                R.id.settings -> replaceFragment(SettingsFragment())
 
 
 

@@ -26,8 +26,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         //setting the bottom sheet behavior to start collapsed
         BottomSheetBehavior.from(findViewById(R.id.bottom_sheet)).apply {
-            peekHeight=200
-            this.state=BottomSheetBehavior.STATE_COLLAPSED
+            peekHeight = 200
+            this.state = BottomSheetBehavior.STATE_COLLAPSED
         }
         //defining the variables for the view
         val email = findViewById<TextInputEditText>(R.id.EmailEditText)
@@ -41,61 +41,73 @@ class LoginActivity : AppCompatActivity() {
             val i = Intent(applicationContext,MainActivity::class.java)
             startActivity(i)
         }*/
-        toggleButton.setOnCheckedChangeListener{ _, isChecked ->
-                if (isChecked){
-                    loginbtn.setOnClickListener {
+        toggleButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                loginbtn.setOnClickListener {
                     val apiInterface = KidApiInterface.create()
                     var kid = Kid()
                     kid.Email = email.text.toString()
                     kid.Password = password.text.toString()
-                    apiInterface.loginkid(kid).enqueue(object : Callback<Kid>{
+                    apiInterface.loginkid(kid).enqueue(object : Callback<Kid> {
                         override fun onResponse(call: Call<Kid>, response: Response<Kid>) {
-                            if (response.isSuccessful){
-                                Toast.makeText(applicationContext,"Kidlogin",Toast.LENGTH_SHORT).show()
-                                println("reponse body"+ response.body().toString())
-                            }
-
-                            else{
-                                Toast.makeText(applicationContext,"Kidlogin unsucceful",Toast.LENGTH_SHORT).show()
-                                println("reponse body"+ response.body().toString())
+                            if (response.isSuccessful) {
+                                Toast.makeText(applicationContext, "Kidlogin", Toast.LENGTH_SHORT)
+                                    .show()
+                                val i = Intent(applicationContext, TaskManagement::class.java)
+                                startActivity(i)
+                            } else {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Kidlogin unsucceful",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                println("reponse body" + response.body().toString())
                                 call.cancel()
                             }
 
                         }
 
                         override fun onFailure(call: Call<Kid>, t: Throwable) {
-                            Toast.makeText(applicationContext,"Kidlogin failed",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Kidlogin failed",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             call.cancel()
                         }
 
                     })
-                }}
-                else if(!isChecked){
-                    loginbtn.setOnClickListener {
+                }
+            } else {
+                loginbtn.setOnClickListener {
                     val apiInterface = ParentApiInterface.create()
                     var parent = Parent()
-                    parent.Email= email.text.toString()
+                    parent.Email = email.text.toString()
                     parent.Password = password.text.toString()
                     apiInterface.login(parent).enqueue(object :
                         Callback<Parent> {
-                        override fun onResponse(call: Call<Parent>, response:
-                        Response<Parent>) {
-                            if (response.code()==201){
+                        override fun onResponse(
+                            call: Call<Parent>, response:
+                            Response<Parent>
+                        ) {
+                            if (response.code() == 201) {
                                 sharedprefs.edit().apply {
                                     putString("_id", response.body()!!._id)
                                     putString("Email", response.body()!!.Email)
-                                    putString("Password",response.body()!!.Password)
+                                    putString("Password", response.body()!!.Password)
                                 }.apply()
                                 val i = Intent(applicationContext, MainActivity::class.java)
                                 startActivity(i)
-                            }
-                            else {
+                            } else {
                                 val builder = AlertDialog.Builder(this@LoginActivity)
                                 builder.setTitle("User not found")
                                     .setMessage("the user was not found, create an account instead?")
                                     .setPositiveButton("register",
                                         DialogInterface.OnClickListener { dialog, id ->
-                                            val i = Intent(applicationContext, RegisterActivity::class.java)
+                                            val i = Intent(
+                                                applicationContext,
+                                                RegisterActivity::class.java
+                                            )
                                             startActivity(i)
                                         })
                                     .setNegativeButton("cancel",
@@ -110,7 +122,7 @@ class LoginActivity : AppCompatActivity() {
 
                         override fun onFailure(call: Call<Parent>, t: Throwable) {
                             val builder = AlertDialog.Builder(this@LoginActivity)
-                            Log.i("erreur",t.toString())
+                            Log.i("erreur", t.toString())
                             builder.setTitle("login failed")
                                 .setMessage("An error has occured, try connecting to the internet")
                                 .setNegativeButton("ok",
@@ -129,8 +141,9 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
-
-    }}}
+        }
+    }
+}
 
 
 

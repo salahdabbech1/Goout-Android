@@ -7,9 +7,11 @@
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_add_white_24dp.xml" value="0.158" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_cancel_black_24dp.xml" value="0.158" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_check_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_clock.xml" value="0.164" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_date_range_black_24dp.xml" value="0.158" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml" value="0.158" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_tick_circle.xml" value="0.1525" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/circle.xml" value="0.1025" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.158" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_child_care_24.xml" value="0.158" />
@@ -27,6 +29,7 @@
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/roundedtext.xml" value="0.22" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/shape.xml" value="0.1705" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/viewpager.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/font/poppins.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1328125" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/activity_login.xml" value="0.11612021857923498" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/activity_main.xml" value="0.17008196721311475" />
@@ -50,8 +53,10 @@
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_notifications.xml" value="0.1875" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/mykids_single_item.xml" value="0.152" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/onboarding_item_container.xml" value="0.25" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/task_single_item.xml" value="0.25" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/menu/bottom_nav_menu.xml" value="0.176" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/menu/bottom_navigation.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/xml/root_preferences.xml" value="0.25" />
       </map>
     </option>
   </component>
