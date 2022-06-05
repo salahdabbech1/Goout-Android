@@ -1,5 +1,5 @@
 package com.example.goout.model
-import com.example.goout.model.Kid
+
 data class Parent(
     val _id: String? = null,
     var Name:String?= null,

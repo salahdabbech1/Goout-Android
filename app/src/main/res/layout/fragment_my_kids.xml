@@ -14,6 +14,7 @@
         tools:listitem="@layout/mykids_single_item" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewtasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/task_single_item"

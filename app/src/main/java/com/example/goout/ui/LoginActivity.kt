@@ -2,13 +2,11 @@ package com.example.goout.ui
 
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AlertDialog.*
 import com.example.goout.R
 import com.example.goout.`interface`.KidApiInterface
 import com.example.goout.`interface`.ParentApiInterface
@@ -35,12 +33,12 @@ class LoginActivity : AppCompatActivity() {
         val loginbtn = findViewById<Button>(R.id.LoginButton)
         val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
         val sharedprefs = getSharedPreferences("Login_prefs", MODE_PRIVATE)
-        /*if (sharedprefs != null) {
+        if (sharedprefs.getString("_id","")!!.isNotEmpty()) {
             Log.d("Shared prefs","this is whats in the shared prefs"+sharedprefs.getString("_id","nothing in id"))
 
             val i = Intent(applicationContext,MainActivity::class.java)
             startActivity(i)
-        }*/
+        }
         toggleButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 loginbtn.setOnClickListener {

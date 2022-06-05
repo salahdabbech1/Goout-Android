@@ -7,6 +7,6 @@ import com.example.goout.R
 
 class TaskViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val title : TextView = itemView.findViewById(R.id.taskName)
-    val desc : TextView = itemView.findViewById(R.id.textDescription)
+    val desc : TextView = itemView.findViewById(R.id.taskDescription)
 
 }

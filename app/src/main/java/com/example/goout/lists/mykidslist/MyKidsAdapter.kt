@@ -3,7 +3,6 @@ package com.example.goout.lists.mykidslist
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.goout.R
 import com.example.goout.model.Kid

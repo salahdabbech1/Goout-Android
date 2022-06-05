@@ -3,7 +3,7 @@ package com.example.goout.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
 import android.widget.ImageView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.goout.R
@@ -19,8 +19,14 @@ class Spalsh : AppCompatActivity() {
         backround.animate().translationY(5000F).setDuration(1000).startDelay = 4000
         logo.animate().translationY(-2000F).setDuration(1000).startDelay =4000
         lottie.animate().translationY(5000F).setDuration(1000).startDelay = 4000
-        val i = Intent(applicationContext,OnBoardingActivity::class.java)
-        startActivity(i)
+
+        var handler: Handler = Handler()
+        handler.postDelayed({
+
+            val intent = Intent(this, OnBoardingActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 4500)
 
     }
 }

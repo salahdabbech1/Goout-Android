@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.goout.R
 import com.example.goout.`interface`.ParentApiInterface
+import com.example.goout.`interface`.TaskApiInterface
 import com.example.goout.lists.mykidslist.MyKidsAdapter
 import com.example.goout.lists.task.TaskAdapter
 import com.example.goout.model.Kid
@@ -37,7 +38,7 @@ class MyKids : Fragment() {
     //task recycler view
     lateinit var recyclerTask: RecyclerView
     lateinit var recyclerTaskadapter: TaskAdapter
-    var tasList: MutableList<Task> = emptyList<Task>().toMutableList()
+    var taskList: MutableList<Task> = emptyList<Task>().toMutableList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,6 +67,37 @@ class MyKids : Fragment() {
                 }
 
             })
+        recyclerTask = view.findViewById(R.id.recyclerviewtasks)
+        recyclerTaskadapter = TaskAdapter(taskList)
+        recyclerTask.adapter = recyclerTaskadapter
+        recyclerTask.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        var taskApiInterface = TaskApiInterface.create()
+        taskApiInterface.gettask("61cc3c19483423efa1dfc1f2").enqueue(object : Callback<List<Task>>{
+            /**
+             * Invoked for a received HTTP response.
+             *
+             *
+             * Note: An HTTP response may still indicate an application-level failure such as a 404 or 500.
+             * Call [Response.isSuccessful] to determine if the response indicates success.
+             */
+            override fun onResponse(call: Call<List<Task>>, response: Response<List<Task>>) {
+                println(response.body())
+                taskList.addAll(response.body()!!)
+
+                recyclerTaskadapter.notifyDataSetChanged()
+            }
+
+            /**
+             * Invoked when a network exception occurred talking to the server or when an unexpected
+             * exception occurred creating the request or processing the response.
+             */
+            override fun onFailure(call: Call<List<Task>>, t: Throwable) {
+                println("no tasks")
+                taskList = emptyList<Task>().toMutableList()
+            }
+
+        })
         // Inflate the layout for this fragment
         return view
     }
