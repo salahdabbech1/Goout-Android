@@ -47,7 +47,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="com.example.goout.ui.MyKids"
+        android:name="com.salah.goout.ui.MyKids"
         android:layout_width="match_parent"
         android:layout_height="572dp"
         tools:layout_editor_absoluteX="258dp"

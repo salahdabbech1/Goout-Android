@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.goout">
+    package="com.salah.goout">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,29 +16,14 @@
         android:theme="@style/Theme.Goout"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.com.goout.ui.TaskManagement"
+            android:name="com.salah.goout.ui.TaskManagement"
             android:exported="false"
             android:theme="@style/Theme.Goout" />
-        <!--
-             TODO: Before you run your application, you need a Google Maps API key.
-
-             To get one, follow the directions here:
-
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA68ilCn8cb5CY3P-p7_4fXLaZu2Ss_DKY" />
-
         <activity
-            android:name="com.example.com.goout.ui.OnBoardingActivity"
+            android:name="com.salah.goout.ui.OnBoardingActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.com.goout.ui.Spalsh"
+            android:name="com.salah.goout.ui.Spalsh"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,16 +32,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.com.goout.ui.AddKidActivity"
+            android:name="com.salah.goout.ui.AddKidActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.com.goout.ui.RegisterActivity"
+            android:name="com.salah.goout.ui.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.com.goout.ui.LoginActivity"
+            android:name="com.salah.goout.ui.LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.com.goout.ui.MainActivity"
+            android:name="com.salah.goout.ui.MainActivity"
             android:exported="true" />
     </application>
 
