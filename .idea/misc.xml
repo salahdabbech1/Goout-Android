@@ -3,7 +3,61 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_access_time_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_add_white_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_cancel_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_check_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_clock.xml" value="0.164" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_date_range_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable-v24/ic_tick_circle.xml" value="0.1525" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/circle.xml" value="0.1025" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_child_care_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_launcher_background.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/indicator_active_backround.xml" value="0.144" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/indicator_inactive_backround.xml" value="0.144" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/rounded.xml" value="0.1705" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/roundedtext.xml" value="0.22" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/shape.xml" value="0.1705" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/drawable/viewpager.xml" value="0.158" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/font/poppins.xml" value="0.28020833333333334" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1328125" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/activity_login.xml" value="0.11612021857923498" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/activity_main.xml" value="0.17008196721311475" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/activity_task.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/item_todo.xml" value="0.264" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout-w936dp/todo_main.xml" value="0.264" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_add_kid.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_on_boarding.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_register.xml" value="0.176" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/activity_spalsh.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_dashboard.xml" value="0.176" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_home.xml" value="0.1875" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_item.xml" value="0.1875" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_item_list.xml" value="0.25" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_location.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_login.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_maps.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_my_kids.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/fragment_notifications.xml" value="0.1875" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/mykids_single_item.xml" value="0.152" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/onboarding_item_container.xml" value="0.25" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/layout/task_single_item.xml" value="0.2" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/menu/bottom_nav_menu.xml" value="0.176" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/menu/bottom_navigation.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1345" />
+        <entry key="..\:/Users/salah/Goout/app/src/main/res/xml/root_preferences.xml" value="0.25" />
       </map>
     </option>
   </component>

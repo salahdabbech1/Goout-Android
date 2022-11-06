@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MyKids">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewkids"
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/mykids_single_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewtasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/task_single_item"
+        android:layout_marginTop="236dp"
+        android:layout_marginBottom="20dp"/>
+
+
+</FrameLayout>

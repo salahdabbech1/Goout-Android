@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/mykids"
+        android:title="All your kids"
+        android:icon="@drawable/ic_baseline_child_care_24"/>
+    <item android:id="@+id/location"
+        android:title="Maps"
+            android:icon="@drawable/ic_baseline_map_24"/>
+    <item
+        android:id="@+id/placeholder"
+        android:title="Add kid" />
+
+    <item android:id="@+id/profile"
+        android:title="Profile Icon"
+        android:icon="@drawable/ic_baseline_person_24"/>
+
+    <item android:id="@+id/settings"
+        android:title="Setting "
+        android:icon="@drawable/ic_baseline_settings_24"/>
+
+</menu>
