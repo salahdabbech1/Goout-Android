@@ -23,8 +23,6 @@ interface KidApiInterface {
                 .baseUrl(BASE_URL)
                 .build()
             return retrofit.create(KidApiInterface::class.java)
-
-
         }
     }
 
